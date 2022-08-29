@@ -10,8 +10,7 @@
   "dependencies": {
     "axios": "^0.21.2",
     "minimist": "^1.2.6",
-    "postman-to-openapi": "^2.1.0",
-    "sleep": "^6.3.0"
+    "postman-to-openapi": "^2.1.0"
   },
   "bin": {
     "apidoc": "src/index.js"
