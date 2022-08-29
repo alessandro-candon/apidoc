@@ -3,11 +3,7 @@ Use this repo for Italian API documentation.
 
 ## How to
 
-Download and open postman.
-
-Import the collection and environment:
-
-![Import](doc/import.png)
+Download and open postman, detect the workspace-id. It is neccessary to follow the command flow.
 
 
 ## How to use command
@@ -24,7 +20,7 @@ All the generated files will be stored in `apidoc` folder.
 
 To view all collections inside a worksapce you can yse this command :
 ```shell
-list-collections 2d97daf8-c97b-4c10-8b6f-bf816a843c92 
+apidoc collection.list --workspace-id=2d97daf8-c97b-4c10-8b6f-bf816a843c92
 ```
 and the output will be :
 
@@ -43,13 +39,13 @@ and the output will be :
 If you want to generate a apidoc in both formats (openapi / postman) use:
 
 ```shell
- generate-collection 521c99e4-e125-40bb-afab-716856c006f2
+apidoc collection.generate --out=/Users/alessandro/Desktop/swagger --collection-id=11226263-a63725ba-c689-4cc9-a136
 ```
 
 If you want to generate only the postman-collection use this command :
 
 ```shell
- generate-collection 521c99e4-e125-40bb-afab-716856c006f2 false
+apidoc collection.generate --out=/Users/alessandro/Desktop/swagger --collection-id=11226263-a63725ba-c689-4cc9-a136-befcc02aee1a --build-open-api=false
 ```
 
 #Install
