@@ -3,6 +3,7 @@
 const collection = require("./collection");
 const collectionLib = require("./collection");
 const openApiLib = require("./openapi");
+const {thrownError} = require("./thrown-error");
 const apiKey = process.env.POSTMAN_APIKEY;
 const args = require('minimist')(process.argv.slice(3));
 const command = process.argv[2];
@@ -11,6 +12,9 @@ const collectionId = args['collection-id'];
 const buildOpenApi = args['build-open-api'] || true;
 const outPath = args['out'];
 
+if (!apiKey) {
+  thrownError('Please set the POSTMAN API KEY to continue');
+}
 switch (command) {
   case 'collection.list':
     collection.getWorkspaces(apiKey, workspaceId).then(
