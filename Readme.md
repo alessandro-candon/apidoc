@@ -20,32 +20,24 @@ All the generated files will be stored in `apidoc` folder.
 
 To view all collections inside a worksapce you can yse this command :
 ```shell
-apidoc collection.list --workspace-id=2d97daf8-c97b-4c10-8b6f-bf816a843c92
+apidoc collection.list --workspace-id=11226263-a63725ba-c689-4cc9-xxxx
 ```
 and the output will be :
 
 ```text
-    * ProductNatureLocal => 920f51a7-a914-4e99-bd55-224498a4c12a
-    * [DKTRENT] catalogue => 521c99e4-e125-40bb-afab-716856c006f2
-    * [DKTRENT] availability => 65bd8338-28d8-4844-be04-6dfc65a9543b
-    * [DKTRENT] core => 0680e039-593c-43f4-b357-6b12206e2063
-    * [MasterData] => deb5bd4e-1271-4b26-9d23-9d6ecebe37a1
-    * [DICTIONARIES] => f32923b1-d7b6-49af-9a43-1ca2de8df754
-    * [OneCatalog] => ece5ddf7-16a9-4bac-993b-a837b2cb5604
-    * [Member] EmployeeV2 => 646a8e71-07d0-4e92-b1b1-2ac24333542b
-    * @deprecated [DKTRENT] back-sport => 53715bbe-e5cd-4654-b02b-5deb2c839357
+    * Name => uuid
 ```
 
 If you want to generate a apidoc in both formats (openapi / postman) use:
 
 ```shell
-apidoc collection.generate --out=/Users/alessandro/Desktop/swagger --collection-id=11226263-a63725ba-c689-4cc9-a136
+apidoc collection.generate --out=/Users/alessandro/Desktop/swagger --collection-id=11226263-a63725ba-c689-4cc9-xxxx
 ```
 
 If you want to generate only the postman-collection use this command :
 
 ```shell
-apidoc collection.generate --out=/Users/alessandro/Desktop/swagger --collection-id=11226263-a63725ba-c689-4cc9-a136-befcc02aee1a --build-open-api=false
+apidoc collection.generate --out=/Users/alessandro/Desktop/swagger --collection-id=11226263-a63725ba-c689-4cc9-xxxx --build-open-api=false
 ```
 
 #Install
@@ -53,5 +45,5 @@ apidoc collection.generate --out=/Users/alessandro/Desktop/swagger --collection-
 If you want to install the script in another project use this tecnique :
 
 ```shell
-npm install git+ssh://git@github.com:dktunited/italy-apidoc.git
+npm install git+ssh://git@github.com:alessandro-candon/apidoc.git
 ```
