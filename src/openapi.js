@@ -10,14 +10,7 @@ const createOpenApiFile = (outPath, collection) => {
         },
     },
     servers: [
-      {
-        url: 'https://api.preprod.xxx.net',
-        description: 'PreProduction environment server'
-      },
-      {
-        url: 'https://api.preprod.xxx.net',
-        description: 'Production environment server'
-      }
+
     ]
   };
 
