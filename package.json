@@ -1,0 +1,19 @@
+{
+  "name": "apidoc",
+  "version": "1.0.0",
+  "description": "Script to export api-doc files",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alessandro Candon <alexcandy91@hotmail.it",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.2",
+    "dotenv": "^16.0.2",
+    "minimist": "^1.2.6",
+    "postman-to-openapi": "^2.1.0"
+  },
+  "bin": {
+    "apidoc": "src/index.js"
+  }
+}
