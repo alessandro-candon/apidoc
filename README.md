@@ -8,11 +8,18 @@ Download and open postman, detect the workspace-id. It is neccessary to follow t
 
 ## How to use command
 
-First operation, the POSTMAN TOKEN must be exported =>
+First operation, the POSTMAN TOKEN must be exported from Postman account settings =>
 
 `
     export POSTMAN_APIKEY='PMAK-61e599eb8966c87f2ce482a8XXX';
 `
+
+Run it =>
+
+```shell
+    mkdir apidoc   
+    src/index.js collection.generate --out=./apidoc/swagger --collection-id=11226263-98f53d21-17e4-4a05-af7d-xxx --build-open-api=false
+```
 
 ## Output folder
 
