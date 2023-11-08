@@ -11,7 +11,7 @@
     "axios": "^0.21.2",
     "dotenv": "^16.0.2",
     "minimist": "^1.2.6",
-    "postman-to-openapi": "^2.1.0"
+    "postman-to-openapi": "^3.0.1"
   },
   "bin": {
     "apidoc": "src/index.js"
