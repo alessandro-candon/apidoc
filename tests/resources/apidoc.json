@@ -1,0 +1,152 @@
+{
+  "info": {
+    "name": "apidoc",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Config",
+      "item": [
+        {
+          "name": "delete-configurations",
+          "event": [],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/configurations/{{key}}"
+          }
+        },
+        {
+          "name": "get-configurations-key",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/configurations/{{key}}"
+          }
+        },
+        {
+          "name": "get-configurations",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/configurations"
+          }
+        },
+        {
+          "name": "post-configuration",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "{{baseUrl}}/configurations",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user\": {\n    \"user_id\": \"583c3ac3f38e84297c002546\",\n    \"email\": \"test@test.com\",\n    \"name\": \"test@test.com\",\n    \"given_name\": \"Hello\",\n    \"family_name\": \"Test\",\n    \"nickname\": \"test\",\n    \"last_ip\": \"94.121.163.63\",\n    \"logins_count\": 15,\n    \"email_verified\": true\n  },\n  \"access_token\": {\n    \"scope\": [\n      \"openid\",\n      \"profile\"\n    ],\n    \"authorization_details\": [],\n    \"client_id\": \"my\",\n    \"iss\": \"test.iss.test\",\n    \"jti\": \"jit\",\n    \"sub\": \"asdasd\",\n    \"uid\": \"asdasd\",\n    \"origin\": \"asdasd\",\n    \"iat\": 1717063455,\n    \"uuid\": \"asdasdasd\",\n    \"exp\": 1717070655\n  },\n  \"id_token\": {\n    \"user_id\": \"583c3ac3f38e84297c002546\",\n    \"email\": \"test@test.com\",\n    \"name\": \"test@test.com\",\n    \"given_name\": \"Hello\",\n    \"family_name\": \"Test\",\n    \"nickname\": \"test\",\n    \"last_ip\": \"94.121.163.63\",\n    \"logins_count\": 15,\n    \"email_verified\": true,\n    \"scope\": [\n      \"openid\",\n      \"profile\"\n    ],\n    \"authorization_details\": [],\n    \"client_id\": \"my\",\n    \"iss\": \"test.iss.test\",\n    \"jti\": \"jit\",\n    \"sub\": \"asdasd\",\n    \"uid\": \"asdasd\",\n    \"origin\": \"asdasd\",\n    \"iat\": 1717063455,\n    \"uuid\": \"asdasdasd\",\n    \"exp\": 1717070655\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "post-well-known",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "{{baseUrl}}/well-known",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"issuer\": \"https://test.test\",\n  \"authorization_endpoint\": \"https://test.test\",\n  \"token_endpoint\": \"https://test.test\",\n  \"revocation_endpoint\": \"https://test.test\",\n  \"userinfo_endpoint\": \"https://test.test\",\n  \"introspection_endpoint\": \"https://test.test\",\n  \"jwks_uri\": \"https://test.test\",\n  \"registration_endpoint\": \"https://test.test\",\n  \"ping_revoked_sris_endpoint\": \"https://test.test\",\n  \"ping_session_management_sris_endpoint\": \"https://test.test\",\n  \"ping_session_management_users_endpoint\": \"https://test.test\",\n  \"ping_end_session_endpoint\": \"https://test.test\",\n  \"backchannel_logout_supported\": true,\n  \"backchannel_logout_session_supported\": true,\n  \"device_authorization_endpoint\": \"https://test.test\",\n  \"response_types_supported\": [\n    \"code\",\n    \"token\",\n    \"id_token\",\n    \"code token\",\n    \"code id_token\",\n    \"token id_token\",\n    \"code token id_token\"\n  ],\n  \"response_modes_supported\": [\n    \"fragment\",\n    \"fragment.jwt\",\n    \"query\",\n    \"query.jwt\",\n    \"form_post\",\n    \"form_post.jwt\",\n    \"jwt\"\n  ],\n  \"grant_types_supported\": [\n    \"implicit\",\n    \"authorization_code\",\n    \"refresh_token\",\n    \"password\",\n    \"client_credentials\"\n  ],\n  \"subject_types_supported\": [\n    \"public\",\n    \"pairwise\"\n  ],\n  \"id_token_signing_alg_values_supported\": [\n    \"none\",\n    \"HS256\",\n    \"HS384\",\n    \"HS512\",\n    \"RS256\",\n    \"RS384\",\n    \"RS512\",\n    \"PS256\",\n    \"PS384\",\n    \"PS512\"\n  ],\n  \"token_endpoint_auth_methods_supported\": [\n    \"client_secret_basic\",\n    \"client_secret_post\",\n    \"client_secret_jwt\",\n    \"private_key_jwt\",\n    \"tls_client_auth\"\n  ],\n  \"token_endpoint_auth_signing_alg_values_supported\": [\n    \"RS256\",\n    \"RS384\",\n    \"RS512\",\n    \"ES256\",\n    \"ES384\",\n    \"ES512\",\n    \"PS256\",\n    \"PS384\",\n    \"PS512\",\n    \"HS256\",\n    \"HS384\",\n    \"HS512\"\n  ],\n  \"claim_types_supported\": [\n    \"normal\"\n  ],\n  \"claims_parameter_supported\": false,\n  \"request_parameter_supported\": true,\n  \"request_uri_parameter_supported\": false,\n  \"authorization_response_iss_parameter_supported\": false,\n  \"request_object_signing_alg_values_supported\": [\n    \"RS256\",\n    \"RS384\",\n    \"RS512\",\n    \"ES256\",\n    \"ES384\",\n    \"ES512\",\n    \"PS256\",\n    \"PS384\",\n    \"PS512\"\n  ],\n  \"request_object_encryption_alg_values_supported\": [\n    \"dir\",\n    \"A128KW\",\n    \"A192KW\",\n    \"A256KW\",\n    \"A128GCMKW\",\n    \"A192GCMKW\",\n    \"A256GCMKW\",\n    \"ECDH-ES\",\n    \"ECDH-ES+A128KW\",\n    \"ECDH-ES+A192KW\",\n    \"ECDH-ES+A256KW\",\n    \"RSA-OAEP\",\n    \"RSA-OAEP-256\"\n  ],\n  \"request_object_encryption_enc_values_supported\": [\n    \"A128CBC-HS256\",\n    \"A192CBC-HS384\",\n    \"A256CBC-HS512\",\n    \"A128GCM\",\n    \"A192GCM\",\n    \"A256GCM\"\n  ],\n  \"id_token_encryption_alg_values_supported\": [\n    \"dir\",\n    \"A128KW\",\n    \"A192KW\",\n    \"A256KW\",\n    \"A128GCMKW\",\n    \"A192GCMKW\",\n    \"A256GCMKW\",\n    \"ECDH-ES\",\n    \"ECDH-ES+A128KW\",\n    \"ECDH-ES+A192KW\",\n    \"ECDH-ES+A256KW\",\n    \"RSA-OAEP\",\n    \"RSA-OAEP-256\"\n  ],\n  \"id_token_encryption_enc_values_supported\": [\n    \"A128CBC-HS256\",\n    \"A192CBC-HS384\",\n    \"A256CBC-HS512\",\n    \"A128GCM\",\n    \"A192GCM\",\n    \"A256GCM\"\n  ],\n  \"introspection_signing_alg_values_supported\": [\n    \"HS256\",\n    \"HS384\",\n    \"HS512\",\n    \"RS256\",\n    \"RS384\",\n    \"RS512\",\n    \"PS256\",\n    \"PS384\",\n    \"PS512\"\n  ],\n  \"introspection_encryption_alg_values_supported\": [\n    \"dir\",\n    \"A128KW\",\n    \"A192KW\",\n    \"A256KW\",\n    \"A128GCMKW\",\n    \"A192GCMKW\",\n    \"A256GCMKW\",\n    \"ECDH-ES\",\n    \"ECDH-ES+A128KW\",\n    \"ECDH-ES+A192KW\",\n    \"ECDH-ES+A256KW\",\n    \"RSA-OAEP\",\n    \"RSA-OAEP-256\"\n  ],\n  \"introspection_encryption_enc_values_supported\": [\n    \"A128CBC-HS256\",\n    \"A192CBC-HS384\",\n    \"A256CBC-HS512\",\n    \"A128GCM\",\n    \"A192GCM\",\n    \"A256GCM\"\n  ],\n  \"authorization_signing_alg_values_supported\": [\n    \"HS256\",\n    \"HS384\",\n    \"HS512\",\n    \"RS256\",\n    \"RS384\",\n    \"RS512\",\n    \"PS256\",\n    \"PS384\",\n    \"PS512\"\n  ],\n  \"authorization_encryption_alg_values_supported\": [\n    \"dir\",\n    \"A128KW\",\n    \"A192KW\",\n    \"A256KW\",\n    \"A128GCMKW\",\n    \"A192GCMKW\",\n    \"A256GCMKW\",\n    \"ECDH-ES\",\n    \"ECDH-ES+A128KW\",\n    \"ECDH-ES+A192KW\",\n    \"ECDH-ES+A256KW\",\n    \"RSA-OAEP\",\n    \"RSA-OAEP-256\"\n  ],\n  \"authorization_encryption_enc_values_supported\": [\n    \"A128CBC-HS256\",\n    \"A192CBC-HS384\",\n    \"A256CBC-HS512\",\n    \"A128GCM\",\n    \"A192GCM\",\n    \"A256GCM\"\n  ],\n  \"pushed_authorization_request_endpoint\": \"https://test.test\",\n  \"require_pushed_authorization_requests\": false,\n  \"authorization_details_types_supported\": [],\n  \"backchannel_authentication_endpoint\": \"https://test.test\",\n  \"backchannel_token_delivery_modes_supported\": [\n    \"poll\",\n    \"ping\"\n  ],\n  \"backchannel_authentication_request_signing_alg_values_supported\": [\n    \"RS256\",\n    \"RS384\",\n    \"RS512\",\n    \"ES256\",\n    \"ES384\",\n    \"ES512\",\n    \"PS256\",\n    \"PS384\",\n    \"PS512\"\n  ],\n  \"backchannel_user_code_parameter_supported\": false,\n  \"code_challenge_methods_supported\": [\n    \"plain\",\n    \"S256\"\n  ],\n  \"dpop_signing_alg_values_supported\": [\n    \"RS256\",\n    \"RS384\",\n    \"RS512\",\n    \"ES256\",\n    \"ES384\",\n    \"ES512\",\n    \"PS256\",\n    \"PS384\",\n    \"PS512\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "OAuth",
+      "item": [
+        {
+          "name": "get-authorization-oauth2",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/as/authorization.oauth2?redirect_uri=http://localhost:3000&state=123state"
+          }
+        },
+        {
+          "name": "get-jwks",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/ext/jwks"
+          }
+        },
+        {
+          "name": "post-token-oauth2",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "{{baseUrl}}/as/token.oauth2"
+          }
+        },
+        {
+          "name": "well-known",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/.well-known/openid-configuration"
+          }
+        }
+      ]
+    },
+    {
+      "name": "UserInfo",
+      "item": [
+        {
+          "name": "get-userinfo",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/idp/userinfo.openid"
+          }
+        },
+        {
+          "name": "post-userinfo",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "{{baseUrl}}/idp/userinfo.openid"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "key",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
