@@ -55,7 +55,7 @@ const run = () => {
         if (!inPath) thrownError("Please provide the input file path");
         const collection = fs.readFileSync(inPath, 'utf8');
         const jsonCollection = JSON.parse(collection);
-        createOpenApiFile('tests/resources/openapi_apidoc', jsonCollection)
+        createOpenApiFile(outPath, jsonCollection)
             .then(_ => console.log('OpenApi file created'))
             .catch(e => console.error('OpenApi cration failed', e));
         break;
