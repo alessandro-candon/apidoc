@@ -25,14 +25,14 @@ const buildOpenApi = args['build-open-api'] || true;
 const outPath = args['out'];
 const inPath = args['in'] || null;
 
-if (!apiKey) {
-  thrownError('Please set the POSTMAN API KEY to continue');
-}
 
 const run = () => {
   switch (command) {
     case 'postman.collection.list':
-      postmanCollection.getWorkspaces(apiKey, workspaceId).then(
+        if (!apiKey) {
+            thrownError('Please set the POSTMAN API KEY to continue');
+        }
+        postmanCollection.getWorkspaces(apiKey, workspaceId).then(
           (workspace) => {
             workspace.collections.forEach(
                 collection => {
@@ -41,7 +41,10 @@ const run = () => {
           });
       break;
     case 'postman.collection.generate':
-      postmanCollectionLib.createCollectionFile(outPath, apiKey, collectionId).then(
+        if (!apiKey) {
+            thrownError('Please set the POSTMAN API KEY to continue');
+        }
+        postmanCollectionLib.createCollectionFile(outPath, apiKey, collectionId).then(
           async collection => {
             if (buildOpenApi) {
               await openApiLib.createOpenApiFile(outPath, collection);
