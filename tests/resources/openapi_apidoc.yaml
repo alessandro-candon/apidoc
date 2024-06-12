@@ -1,0 +1,426 @@
+openapi: 3.0.0
+info:
+  title: apidoc
+  version: 1.0.0
+servers:
+  - url: https://api.preprod.xxx.net
+    description: PreProduction environment server
+  - url: https://api.preprod.xxx.net
+    description: Production environment server
+components:
+  securitySchemes:
+    oAuth2:
+      type: http
+      scheme: bearer
+      bearerFormat: A resource owner JWT
+      description: OAuth2 JWT token
+security:
+  - oAuth2: []
+tags:
+  - name: Config
+  - name: OAuth
+  - name: UserInfo
+paths:
+  /configurations/{key}:
+    delete:
+      tags:
+        - Config
+      summary: delete-configurations
+      parameters:
+        - name: key
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Config
+      summary: get-configurations-key
+      parameters:
+        - name: key
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /configurations:
+    get:
+      tags:
+        - Config
+      summary: get-configurations
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Config
+      summary: post-configuration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                user:
+                  user_id: 583c3ac3f38e84297c002546
+                  email: test@test.com
+                  name: test@test.com
+                  given_name: Hello
+                  family_name: Test
+                  nickname: test
+                  last_ip: 94.121.163.63
+                  logins_count: 15
+                  email_verified: true
+                access_token:
+                  scope:
+                    - openid
+                    - profile
+                  authorization_details: []
+                  client_id: my
+                  iss: test.iss.test
+                  jti: jit
+                  sub: asdasd
+                  uid: asdasd
+                  origin: asdasd
+                  iat: 1717063455
+                  uuid: asdasdasd
+                  exp: 1717070655
+                id_token:
+                  user_id: 583c3ac3f38e84297c002546
+                  email: test@test.com
+                  name: test@test.com
+                  given_name: Hello
+                  family_name: Test
+                  nickname: test
+                  last_ip: 94.121.163.63
+                  logins_count: 15
+                  email_verified: true
+                  scope:
+                    - openid
+                    - profile
+                  authorization_details: []
+                  client_id: my
+                  iss: test.iss.test
+                  jti: jit
+                  sub: asdasd
+                  uid: asdasd
+                  origin: asdasd
+                  iat: 1717063455
+                  uuid: asdasdasd
+                  exp: 1717070655
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /well-known:
+    post:
+      tags:
+        - Config
+      summary: post-well-known
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                issuer: https://test.test
+                authorization_endpoint: https://test.test
+                token_endpoint: https://test.test
+                revocation_endpoint: https://test.test
+                userinfo_endpoint: https://test.test
+                introspection_endpoint: https://test.test
+                jwks_uri: https://test.test
+                registration_endpoint: https://test.test
+                ping_revoked_sris_endpoint: https://test.test
+                ping_session_management_sris_endpoint: https://test.test
+                ping_session_management_users_endpoint: https://test.test
+                ping_end_session_endpoint: https://test.test
+                backchannel_logout_supported: true
+                backchannel_logout_session_supported: true
+                device_authorization_endpoint: https://test.test
+                response_types_supported:
+                  - code
+                  - token
+                  - id_token
+                  - code token
+                  - code id_token
+                  - token id_token
+                  - code token id_token
+                response_modes_supported:
+                  - fragment
+                  - fragment.jwt
+                  - query
+                  - query.jwt
+                  - form_post
+                  - form_post.jwt
+                  - jwt
+                grant_types_supported:
+                  - implicit
+                  - authorization_code
+                  - refresh_token
+                  - password
+                  - client_credentials
+                subject_types_supported:
+                  - public
+                  - pairwise
+                id_token_signing_alg_values_supported:
+                  - none
+                  - HS256
+                  - HS384
+                  - HS512
+                  - RS256
+                  - RS384
+                  - RS512
+                  - PS256
+                  - PS384
+                  - PS512
+                token_endpoint_auth_methods_supported:
+                  - client_secret_basic
+                  - client_secret_post
+                  - client_secret_jwt
+                  - private_key_jwt
+                  - tls_client_auth
+                token_endpoint_auth_signing_alg_values_supported:
+                  - RS256
+                  - RS384
+                  - RS512
+                  - ES256
+                  - ES384
+                  - ES512
+                  - PS256
+                  - PS384
+                  - PS512
+                  - HS256
+                  - HS384
+                  - HS512
+                claim_types_supported:
+                  - normal
+                claims_parameter_supported: false
+                request_parameter_supported: true
+                request_uri_parameter_supported: false
+                authorization_response_iss_parameter_supported: false
+                request_object_signing_alg_values_supported:
+                  - RS256
+                  - RS384
+                  - RS512
+                  - ES256
+                  - ES384
+                  - ES512
+                  - PS256
+                  - PS384
+                  - PS512
+                request_object_encryption_alg_values_supported:
+                  - dir
+                  - A128KW
+                  - A192KW
+                  - A256KW
+                  - A128GCMKW
+                  - A192GCMKW
+                  - A256GCMKW
+                  - ECDH-ES
+                  - ECDH-ES+A128KW
+                  - ECDH-ES+A192KW
+                  - ECDH-ES+A256KW
+                  - RSA-OAEP
+                  - RSA-OAEP-256
+                request_object_encryption_enc_values_supported:
+                  - A128CBC-HS256
+                  - A192CBC-HS384
+                  - A256CBC-HS512
+                  - A128GCM
+                  - A192GCM
+                  - A256GCM
+                id_token_encryption_alg_values_supported:
+                  - dir
+                  - A128KW
+                  - A192KW
+                  - A256KW
+                  - A128GCMKW
+                  - A192GCMKW
+                  - A256GCMKW
+                  - ECDH-ES
+                  - ECDH-ES+A128KW
+                  - ECDH-ES+A192KW
+                  - ECDH-ES+A256KW
+                  - RSA-OAEP
+                  - RSA-OAEP-256
+                id_token_encryption_enc_values_supported:
+                  - A128CBC-HS256
+                  - A192CBC-HS384
+                  - A256CBC-HS512
+                  - A128GCM
+                  - A192GCM
+                  - A256GCM
+                introspection_signing_alg_values_supported:
+                  - HS256
+                  - HS384
+                  - HS512
+                  - RS256
+                  - RS384
+                  - RS512
+                  - PS256
+                  - PS384
+                  - PS512
+                introspection_encryption_alg_values_supported:
+                  - dir
+                  - A128KW
+                  - A192KW
+                  - A256KW
+                  - A128GCMKW
+                  - A192GCMKW
+                  - A256GCMKW
+                  - ECDH-ES
+                  - ECDH-ES+A128KW
+                  - ECDH-ES+A192KW
+                  - ECDH-ES+A256KW
+                  - RSA-OAEP
+                  - RSA-OAEP-256
+                introspection_encryption_enc_values_supported:
+                  - A128CBC-HS256
+                  - A192CBC-HS384
+                  - A256CBC-HS512
+                  - A128GCM
+                  - A192GCM
+                  - A256GCM
+                authorization_signing_alg_values_supported:
+                  - HS256
+                  - HS384
+                  - HS512
+                  - RS256
+                  - RS384
+                  - RS512
+                  - PS256
+                  - PS384
+                  - PS512
+                authorization_encryption_alg_values_supported:
+                  - dir
+                  - A128KW
+                  - A192KW
+                  - A256KW
+                  - A128GCMKW
+                  - A192GCMKW
+                  - A256GCMKW
+                  - ECDH-ES
+                  - ECDH-ES+A128KW
+                  - ECDH-ES+A192KW
+                  - ECDH-ES+A256KW
+                  - RSA-OAEP
+                  - RSA-OAEP-256
+                authorization_encryption_enc_values_supported:
+                  - A128CBC-HS256
+                  - A192CBC-HS384
+                  - A256CBC-HS512
+                  - A128GCM
+                  - A192GCM
+                  - A256GCM
+                pushed_authorization_request_endpoint: https://test.test
+                require_pushed_authorization_requests: false
+                authorization_details_types_supported: []
+                backchannel_authentication_endpoint: https://test.test
+                backchannel_token_delivery_modes_supported:
+                  - poll
+                  - ping
+                backchannel_authentication_request_signing_alg_values_supported:
+                  - RS256
+                  - RS384
+                  - RS512
+                  - ES256
+                  - ES384
+                  - ES512
+                  - PS256
+                  - PS384
+                  - PS512
+                backchannel_user_code_parameter_supported: false
+                code_challenge_methods_supported:
+                  - plain
+                  - S256
+                dpop_signing_alg_values_supported:
+                  - RS256
+                  - RS384
+                  - RS512
+                  - ES256
+                  - ES384
+                  - ES512
+                  - PS256
+                  - PS384
+                  - PS512
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /as/authorization.oauth2:
+    get:
+      tags:
+        - OAuth
+      summary: get-authorization-oauth2
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /ext/jwks:
+    get:
+      tags:
+        - OAuth
+      summary: get-jwks
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /as/token.oauth2:
+    post:
+      tags:
+        - OAuth
+      summary: post-token-oauth2
+      requestBody:
+        content: {}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /.well-known/openid-configuration:
+    get:
+      tags:
+        - OAuth
+      summary: well-known
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /idp/userinfo.openid:
+    get:
+      tags:
+        - UserInfo
+      summary: get-userinfo
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - UserInfo
+      summary: post-userinfo
+      requestBody:
+        content: {}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

@@ -1,6 +1,6 @@
 const postmanToOpenApi = require("postman-to-openapi");
 
-const createOpenApiFile = (outPath, collection) => {
+const createOpenApiFile = async (outPath, collection) => {
   const options = {
     auth: {
       oAuth2: {
@@ -23,7 +23,7 @@ const createOpenApiFile = (outPath, collection) => {
   };
 
   const rawCollectionJson = JSON.stringify(collection);
-  postmanToOpenApi(rawCollectionJson, `${outPath}.yaml`, options);
+  return postmanToOpenApi(rawCollectionJson, `${outPath}.yaml`, options)
 }
 
 exports.createOpenApiFile = createOpenApiFile;

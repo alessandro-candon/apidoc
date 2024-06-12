@@ -3,17 +3,20 @@
   "version": "1.0.0",
   "description": "Script to export api-doc files",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Alessandro Candon <alexcandy91@hotmail.it",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.2",
-    "dotenv": "^16.0.2",
-    "minimist": "^1.2.6",
-    "postman-to-openapi": "^3.0.1"
+    "axios": "^1",
+    "dotenv": "^16",
+    "minimist": "^1",
+    "postman-to-openapi": "^3"
   },
   "bin": {
     "apidoc": "src/index.js"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
