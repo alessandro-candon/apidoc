@@ -29,12 +29,9 @@ Available commnads:
 # From Postman to OpenApi
 
 ## How to
-Download and open postman, detect the workspace-id. It is neccessary to follow the command flow.
+Download and open postman, detect the workspace-id. It is necessary to follow the command flow.
 
 ## How to use command
-<<<<<<<< HEAD:new_README.MD
-First operation, the POSTMAN TOKEN must be exported =>
-========
 
 First operation, the POSTMAN TOKEN must be exported from Postman account settings =>
 >>>>>>>> refs/heads/master:README.md
